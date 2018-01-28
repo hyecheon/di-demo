@@ -1,5 +1,6 @@
 package hclee.springframework.didemo.service;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
@@ -8,9 +9,16 @@ import org.springframework.stereotype.Service;
 @Primary
 @Profile("ko")
 public class PrimaryKoreaGreetingService implements GreetingService {
+
+    private GreetingRepository greetingRepository;
+
+    public PrimaryKoreaGreetingService(GreetingRepository greetingRepository) {
+        this.greetingRepository = greetingRepository;
+    }
+
     @Override
     public String sayGreeting() {
-        return "한국 안녕 서비";
+        return greetingRepository.getKoreaGreeting();
     }
 }
 
