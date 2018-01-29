@@ -1,0 +1,11 @@
+spring:
+  profiles:
+    active: en
+hclee:
+  jms:
+    username: JMS USERNAME
+    password: some Pass
+    dburl: some URL
+  username: hclee
+  password: pass
+  dburl: some url
