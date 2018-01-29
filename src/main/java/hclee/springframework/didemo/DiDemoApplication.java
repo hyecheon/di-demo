@@ -5,6 +5,7 @@ import hclee.springframework.didemo.controllers.GetterInjectedController;
 import hclee.springframework.didemo.controllers.MyController;
 import hclee.springframework.didemo.controllers.PropertyInjectedController;
 import hclee.springframework.didemo.examplebeans.FakeDataSource;
+import hclee.springframework.didemo.examplebeans.FakeJmsBroker;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -19,6 +20,8 @@ public class DiDemoApplication {
         final ApplicationContext ctx = SpringApplication.run(DiDemoApplication.class, args);
         final MyController controller = ctx.getBean("myController", MyController.class);
         final FakeDataSource fakeDataSource = ctx.getBean(FakeDataSource.class);
+        final FakeJmsBroker fakeJmsBroker = ctx.getBean(FakeJmsBroker.class);
         System.out.println(fakeDataSource);
+        System.out.println(fakeJmsBroker);
     }
 }
