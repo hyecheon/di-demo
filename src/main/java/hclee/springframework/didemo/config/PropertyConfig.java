@@ -12,15 +12,8 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.core.env.Environment;
 
 @Configuration
-//@PropertySource({"classpath:datasource.properties", "classpath:jms.properties"})
-@PropertySources({
-        @PropertySource("classpath:jms.properties"),
-        @PropertySource("classpath:datasource.properties")
-})
 public class PropertyConfig {
 
-    @Autowired
-    private Environment env;
     @Value("${hclee.username}")
     private String username;
     @Value("${hclee.password}")
